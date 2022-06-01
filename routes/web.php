@@ -326,6 +326,92 @@ Route::group(['middleware' => ['auth']], function () {
 
     Route::match(['get', 'post'], '/marche/modifier/{id}', [App\Http\Controllers\MarcheController::class, 'edit'])->name('marchemodifier');
 
+
+ // ## Partie cyrille
+
+      //---- route machines----
+      Route::match(['get', 'post'], '/consommables', [App\Http\Controllers\ConsommableController::class, 'index'])->name('list-consommable');
+
+      Route::match(['get', 'post'], '/consommable/creer', [App\Http\Controllers\ConsommableController::class, 'create'])->name('creer-consommable');
+  
+      Route::match(['get', 'post'], '/consommable/modifier/{id}', [App\Http\Controllers\ConsommableController::class, 'edit'])->name('modifier-consommable');
+  
+      Route::post( '/consommable/send',  [App\Http\Controllers\ConsommableController::class, 'store'])->name('store-consommable');
+      //---- fin route machines----
+
+
+    //---- route intervenants----
+    Route::match(['get', 'post'], '/intervenants', [App\Http\Controllers\IntervenantController::class, 'index'])->name('list-intervenant');
+
+    Route::match(['get', 'post'], '/intervenant/creer', [App\Http\Controllers\IntervenantController::class, 'create'])->name('creer-intervenant');
+
+    Route::match(['get', 'post'], '/intervenant/modifier/{id}', [App\Http\Controllers\IntervenantController::class, 'edit'])->name('modifier-intervenant');
+
+    Route::post( '/intervenant/send',  [App\Http\Controllers\IntervenantController::class, 'store'])->name('store-intervenant');
+    //---- fin route intervenants----
+
+
+
+    //---- route livrables----
+    Route::match(['get', 'post'], '/livrables', [App\Http\Controllers\LivraisonController::class, 'index'])->name('list-livrable');
+
+    Route::match(['get', 'post'], '/livrable/creer', [App\Http\Controllers\LivraisonController::class, 'create'])->name('creer-livrable');
+
+    Route::match(['get', 'post'], '/livrable/modifier/{id}', [App\Http\Controllers\LivraisonController::class, 'edit'])->name('modifier-livrable');
+
+    Route::post( '/livrable/send',  [App\Http\Controllers\LivraisonController::class, 'store'])->name('store-livrable');
+    //---- fin route livrables----
+
+
+
+
+    //---- route machines----
+    Route::match(['get', 'post'], '/machines', [App\Http\Controllers\MachineController::class, 'index'])->name('list-machine');
+
+    Route::match(['get', 'post'], '/machine/creer', [App\Http\Controllers\MachineController::class, 'create'])->name('creer-machine');
+
+    Route::match(['get', 'post'], '/machine/modifier/{id}', [App\Http\Controllers\MachineController::class, 'edit'])->name('modifier-machine');
+
+    Route::post( '/machine/send',  [App\Http\Controllers\MachineController::class, 'store'])->name('store-machine');
+    //---- fin route machines----
+
+
+        //---- route projections----
+    Route::match(['get', 'post'], '/projections', [App\Http\Controllers\ProjectionController::class, 'index'])->name('list-projection');
+
+    Route::match(['get', 'post'], '/projection/creer', [App\Http\Controllers\ProjectionController::class, 'create'])->name('creer-projection');
+
+    Route::match(['get', 'post'], '/projection/modifier/{id}', [App\Http\Controllers\ProjectionController::class, 'edit'])->name('modifier-projection');
+
+    Route::post( '/projection/send',  [App\Http\Controllers\ProjectionController::class, 'store'])->name('store-projection');
+    //---- fin route projections----
+
+
+
+    //---- route rapports----
+    Route::match(['get', 'post'], '/rapports', [App\Http\Controllers\RapportController::class, 'index'])->name('list-rapport');
+
+    Route::match(['get', 'post'], '/rapport/creer', [App\Http\Controllers\RapportController::class, 'create'])->name('creer-rapport');
+
+    Route::match(['get', 'post'], '/rapport/modifier/{id}', [App\Http\Controllers\RapportController::class, 'edit'])->name('modifier-rapport');
+
+    Route::post( '/rapport/send',  [App\Http\Controllers\RapportController::class, 'store'])->name('store-rapport');
+    //---- fin route rapports----
+
+
+
+
+     //---- route travaux----
+     Route::match(['get', 'post'], '/travaux', [App\Http\Controllers\TravauxController::class, 'index'])->name('list-travaux');
+
+     Route::match(['get', 'post'], '/travaux/creer', [App\Http\Controllers\TravauxController::class, 'create'])->name('creer-travaux');
+ 
+     Route::match(['get', 'post'], '/travaux/modifier/{id}', [App\Http\Controllers\TravauxController::class, 'edit'])->name('modifier-travaux');
+ 
+     Route::post( '/travaux/send',  [App\Http\Controllers\TravauxController::class, 'store'])->name('store-travaux');
+     //---- fin route travaux----
+// ## Fin Partie cyrille
+
 });
 
 Route::get('/deconnexion', [App\Http\Controllers\HomeController::class, 'deconnexion']);
